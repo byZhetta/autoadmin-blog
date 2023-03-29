@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug'];
+
     // Relation one to much inverse
     public function user() {
         return $this->belongsTo(User::class);
