@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -32,14 +33,13 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'slug' => 'required|unique:tags'
-        ]);
         $post = Post::create($request->all());
-        return redirect()->route('admin.posts.edit', compact('post'))->with('info', 'El post se creó con éxito');
+        if ($request->tags){
+            $post->tags()->attach($request->tags);
+        }
+        return redirect()->route('admin.posts.edit', $post);
     }
 
     /**
@@ -63,12 +63,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $request->validate([
-            'name' => 'required',
-            'slug' => "required|unique:tags,slug,$post->id",
-        ]);
-        $post->update($request->all());
-        return redirect()->route('admin.posts.edit', compact('post'))->with('info', 'El post se actualizó con éxito');
+        //
     }
 
     /**
@@ -76,7 +71,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
-        return redirect()->route('admin.posts.index')->with('info', 'El post se eliminó con éxito');        
+        //      
     }
 }
