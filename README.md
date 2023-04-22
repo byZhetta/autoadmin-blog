@@ -1,66 +1,63 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Blog autoadministrable
 
-## About Laravel
+## Descripción
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Desarrollo de un blog con laravel y vite. Se utilizó para el frontend tailwind y alpine, además se integró livewire para la construcción de interfaces dinámicas y adminLTE3 para el dashboard de usuario, para almacenar datos de utilizó MySQL, la autenticación se realizó con jetstream. Para implementar los roles y permisos dentro del sistema se uso el paquete de laravel permission. Se crearon factorys como herramienta para generar datos de prueba.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El blog permite mostrar y filtrar todas las categorias disponibles, mostrar por etiquetas de los posts disponibles, además permite iniciar sesión y registrarse. Para la parte administrativa, se accede mediante permisos previamente asignados por el administrador principal del sistema, una vez ingresado se detallan las siguientes opciones:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Usuarios: se detallan todos los usuarios disponibles y se le permite asignar un rol.
+- Roles: se detallan los roles disponibles, como también se puede crear, editar y eliminar un rol.
+- Categorías: se detallan todas las categorías y permite crear una nueva categoría, adicionalmente permite editar o eliminar dicha categoría.
+- Etiquetas: se detallan todas las etiquetas desponibles y permite crear una nueva etiqueta, como también editar y eliminar una etiqueta.
+- Lista de post: Se detallan todos los posts asociados a dicho usuario, el mismo puede ver, editar y eliminar un post.
+- Crear nuevo post: se muestra un formulario para llenar con todos los datos para un nuevo post.
 
-## Learning Laravel
+## Screenshots
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+|Pantalla Principal|Categoría|
+|:----------------:|:-------:|
+|![image1](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197020/projects/blogimg1_sqdv6f.jpg)|![image2](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197048/projects/blogimg2_ehhziq.jpg)| 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+|Descripción|Dashboard|
+|:---------:|:-------:|
+|![image3](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197064/projects/blogimg3_dtczgd.jpg)|![image4](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197080/projects/blogimg4_yf0eqc.jpg)|  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación
 
-## Laravel Sponsors
+```bash
+git clone https://github.com/byZhetta/autoadmin-blog.git
+cd autoadmin-blog
+composer install
+npm install
+php artisan key:generate # genera automaticamente una key para la aplicación
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Migraciones
 
-### Premium Partners
+Luego de crear una base de datos y colocarla en el archivo `.env`, en la sección DB_DATABASE, continuar con las migraciones.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```bash
+php artisan migrate
+```
 
-## Contributing
+### Correr aplicación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan serv # Correr el servidor
+npm run dev # Correr los estilos de vite
+```
 
-## Code of Conduct
+## Tecnologías principales
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Laravel v10.3.3
+- vite v4.2.0
+- tailwindcss v3.1.0
+- alpinejs v3.0.6
+- nodejs v14.18.1
 
-## Security Vulnerabilities
+## Autor
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[@byZhetta](https://github.com/byZhetta) - [MIT license](https://opensource.org/licenses/MIT). 
