@@ -1,31 +1,31 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# Blog autoadministrable
+# Self-Managed Blog
 
-## Descripción
+## Description
 
-Desarrollo de un blog con laravel y vite. Se utilizó para el frontend tailwind y alpine, además se integró livewire para la construcción de interfaces dinámicas y adminLTE3 para el dashboard de usuario, para almacenar datos de utilizó MySQL, la autenticación se realizó con jetstream. Para implementar los roles y permisos dentro del sistema se uso el paquete de laravel permission. Se crearon factorys como herramienta para generar datos de prueba.
+Development of a blog with laravel and vite. It was used for the tailwind and alpine frontend, in addition livewire was integrated for the construction of dynamic interfaces and adminLTE3 for the user dashboard, to store data of MySQL, the authentication was carried out with jetstream. To implement the roles and permissions within the system, the laravel permission package was used. Factorys were created as a tool to generate test data.
 
-El blog permite mostrar y filtrar todas las categorias disponibles, mostrar por etiquetas de los posts disponibles, además permite iniciar sesión y registrarse. Para la parte administrativa, se accede mediante permisos previamente asignados por el administrador principal del sistema, una vez ingresado se detallan las siguientes opciones:
+The blog allows to show and filter all available categories, show by tags of available posts, also allows you to log in and register. For the administrative part, it is accessed through permissions previously assigned by the main administrator of the system, once entered the following options are detailed:
 
-- Usuarios: se detallan todos los usuarios disponibles y se le permite asignar un rol.
-- Roles: se detallan los roles disponibles, como también se puede crear, editar y eliminar un rol.
-- Categorías: se detallan todas las categorías y permite crear una nueva categoría, adicionalmente permite editar o eliminar dicha categoría.
-- Etiquetas: se detallan todas las etiquetas desponibles y permite crear una nueva etiqueta, como también editar y eliminar una etiqueta.
-- Lista de post: Se detallan todos los posts asociados a dicho usuario, el mismo puede ver, editar y eliminar un post.
-- Crear nuevo post: se muestra un formulario para llenar con todos los datos para un nuevo post.
+- Users: All available users are listed and you are allowed to assign a role.
+- Roles: The available roles are detailed, as well as you can create, edit, and delete a role.
+- Categories: All categories are detailed and allows you to create a new category, additionally allows you to edit or remove this category. 
+- Tags: All removable labels are detailed and allows you to create a new label, as well as edit and remove a tag.
+- Post list: All posts associated with that user are detailed, he can view, edit and delete a post. 
+- Create new post: A form is displayed to fill in with all the data for a new post.
 
 ## Screenshots
 
-|Pantalla Principal|Categoría|
+|Main screen|Category|
 |:----------------:|:-------:|
 |![image1](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197020/projects/blogimg1_sqdv6f.jpg)|![image2](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197048/projects/blogimg2_ehhziq.jpg)| 
 
-|Descripción|Dashboard|
+|Description|Dashboard|
 |:---------:|:-------:|
 |![image3](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197064/projects/blogimg3_dtczgd.jpg)|![image4](https://res.cloudinary.com/dhpf7lthd/image/upload/v1682197080/projects/blogimg4_yf0eqc.jpg)|  
 
-## Instalación
+## Installation
 
 ```bash
 git clone https://github.com/byZhetta/autoadmin-blog.git
@@ -35,22 +35,22 @@ npm install
 php artisan key:generate # genera automaticamente una key para la aplicación
 ```
 
-### Migraciones
+### Migration
 
-Luego de crear una base de datos y colocarla en el archivo `.env`, en la sección DB_DATABASE, continuar con las migraciones.
+After creating a database and placing it in the `.env` file, in the DB_DATABASE section, proceed with the migrations.
 
 ```bash
 php artisan migrate
 ```
 
-### Correr aplicación
+### Run app
 
 ```bash
 php artisan serv # Correr el servidor
 npm run dev # Correr los estilos de vite
 ```
 
-## Tecnologías principales
+## Technologies
 
 - Laravel v10.3.3
 - vite v4.2.0
@@ -58,6 +58,6 @@ npm run dev # Correr los estilos de vite
 - alpinejs v3.0.6
 - nodejs v14.18.1
 
-## Autor
+## Author
 
 [@byZhetta](https://github.com/byZhetta) - [MIT license](https://opensource.org/licenses/MIT). 
