@@ -58,4 +58,4 @@ npm run dev # Correr los estilos de vite
 
 ## Author
 
-[@byZhetta](https://github.com/byZhetta) - [MIT license](https://opensource.org/licenses/MIT). 
+[@byZhetta](https://github.com/byZhetta) 
