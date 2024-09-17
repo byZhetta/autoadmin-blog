@@ -56,6 +56,4 @@ npm run dev # Correr los estilos de vite
 - alpinejs v3.0.6
 - nodejs v14.18.1
 
-## Author
-
 [@byZhetta](https://github.com/byZhetta) 
