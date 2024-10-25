@@ -55,5 +55,3 @@ npm run dev # Correr los estilos de vite
 - tailwindcss v3.1.0
 - alpinejs v3.0.6
 - nodejs v14.18.1
-
-[@byZhetta](https://github.com/byZhetta) 
